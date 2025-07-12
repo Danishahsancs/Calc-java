@@ -34,7 +34,6 @@ public class TestMainApplication {
     //Display clear
     public void testClear() {
         calculator.setDisplay(100);
-        calculator.divide(0);
         calculator.clear();
         assertEquals(0.0,calculator.getDisplayValue(),DELTA);
 
@@ -78,45 +77,54 @@ public class TestMainApplication {
     @Test 
     //division
     public void testDivision() {
+        calculator.setDisplay(20);
+        calculator.divide(5);
+        assertEquals(4.0,calculator.getDisplayValue(),DELTA);
 
     }
 
     @Test 
     //square
     public void testSquare() {
+        calculator.setDisplay(5);
+        calculator.square();
+        assertEquals(25.0,calculator.getDisplayValue(),DELTA);
 
     }
 
     @Test 
     //square root
     public void testRoot() {
-
+        calculator.setDisplay(25);
+        calculator.squareRoot();
+        assertEquals(5.0,calculator.getDisplayValue(),DELTA);
     }
 
     @Test
     //exponent 
     public void testExponent() {
+        calculator.setDisplay(3);
+        calculator.exponentiation(2);
+        assertEquals(9.0,calculator.getDisplayValue(),DELTA);
 
     }
 
     @Test 
     //inverse
     public void testInverse() {
+        calculator.setDisplay(5);
+        calculator.inverse();
+        assertEquals(0.20, calculator.getDisplayValue(),DELTA);
 
     }
 
     @Test 
-    //invert 
-    public void testInvert() {
+    //invert sign
+    public void testInvertSign() {
+        calculator.setDisplay(10);
+        calculator.inverseSign();
+        assertEquals(-10.0, calculator.getDisplayValue(),DELTA);
 
     }
-
-    @Test 
-    //display ERR
-    public void testError() {
-
-    }
-
-
 
 }

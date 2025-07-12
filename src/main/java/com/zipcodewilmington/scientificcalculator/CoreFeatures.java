@@ -35,8 +35,16 @@ public class CoreFeatures {
   
     //Clear the display
       public void clear () {
+
+        //set display to 0 
         this.displayValue=0.0;
         this.errorState=false;
+
+
+        // Clear terminal by print lines to simulate clearing
+        for (int i = 0; i < 100; ++i) {
+            System.out.println();
+        }
         System.out.println("Cleared");
       }
     
