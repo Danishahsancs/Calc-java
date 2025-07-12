@@ -6,16 +6,17 @@ package com.zipcodewilmington.scientificcalculator;
 public class MainApplication {
     public static void main(String[] args) {
         System.out.println("\nWelcome to my calculator!\n");
-
+        CoreFeatures cfcalc = new CoreFeatures();
         Double userinput;
         Integer option=-1;
 
 
         while(option!=19){
             userinput = Console.getDoubleInput("Enter a number: ");
+            cfcalc.setDisplay(userinput);
             showOption();
             option = Console.getIntegerInput("choose one of the options above: ");
-            runOption(option);
+            runOption(option, cfcalc, userinput);
 
         }
 
@@ -45,19 +46,28 @@ public class MainApplication {
         System.out.println("19. exit");
     }
 
-    public static void runOption(Integer option){
+    public static void runOption(Integer option, CoreFeatures cfcalc, Double num){
+
+        Double userinput;
+
         switch (option) {
             case 0:
                 
                 break;
             case 1:
-                
+                userinput = Console.getDoubleInput("Enter a number to add to "+cfcalc.getDisplayValue()+" : ");
+                cfcalc.add(userinput);
+                System.out.println("="+cfcalc.getDisplayValue());
                 break;
             case 2:
-                
+                userinput = Console.getDoubleInput("Enter a number to subtract to "+cfcalc.getDisplayValue()+" : ");
+                cfcalc.subtract(userinput);
+                System.out.println("="+cfcalc.getDisplayValue());
                 break;
             case 3:
-                
+                userinput = Console.getDoubleInput("Enter a number to multiply to "+cfcalc.getDisplayValue()+" : ");
+                cfcalc.multiply(userinput);
+                System.out.println("="+cfcalc.getDisplayValue());
                 break;
             case 4:
                 
