@@ -46,7 +46,7 @@ public class CoreFeatures {
 
 
         // Clear terminal by printing lines to simulate clearing
-        for (int i = 0; i < 100; ++i) {
+        for (int i = 0; i < 50; ++i) {
             System.out.println();
         }
         System.out.println("Cleared");
