@@ -105,19 +105,25 @@ public class MainApplication {
                 System.out.println("="+cfcalc.getDisplayValue());
                 break;
             case 4:
-                
+                userinput = Console.getDoubleInput("Enter a number to divide to "+cfcalc.getDisplayValue()+" : ");
+                cfcalc.divide(userinput);
+                System.out.println("="+cfcalc.getDisplayValue());
                 break;
             case 5:
-                
+                cfcalc.square();
+                System.out.println("="+cfcalc.getDisplayValue()+" : ");
                 break;
             case 6:
-                
+                cfcalc.squareRoot();
+                System.out.println("="+cfcalc.getDisplayValue()+" : ");
                 break;
             case 7:
-                
+                cfcalc.inverse();
+                System.out.println("="+cfcalc.getDisplayValue()+" : ");
                 break;
             case 8:
-                
+                cfcalc.inverseSign();
+                System.out.println("="+cfcalc.getDisplayValue()+" : ");
                 break;
             case 9:
                 System.out.println("sine("+cfcalc.getDisplayValue()+")= "+outputConverter(sCalc, sCalc.sine(cfcalc.getDisplayValue())));
