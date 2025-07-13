@@ -10,26 +10,27 @@ public class MainApplication {
         ScientificCalc sCalc = new ScientificCalc();
         Integer option = -1;
 
-        while (option != 19) {
+        while (option != 21) {
             showOption();
             option = Console.getIntegerInput("choose one of the options above: ");
             runOption(option, cfcalc, sCalc);
+            System.out.println("\n");
 
         }
 
     }
 
     public static void showOption() {
-        System.out.println("0. clear display");
-        System.out.println("1. add");
-        System.out.println("2. subtract");
-        System.out.println("3. multiply");
-        System.out.println("4. division");
-        System.out.println("5. square");
-        System.out.println("6. square root");
-        System.out.println("7. inverse");
-        System.out.println("8. switch sign");
-        System.out.println("9. sine");
+        System.out.println("0.  clear display");
+        System.out.println("1.  add");
+        System.out.println("2.  subtract");
+        System.out.println("3.  multiply");
+        System.out.println("4.  division");
+        System.out.println("5.  square");
+        System.out.println("6.  square root");
+        System.out.println("7.  inverse");
+        System.out.println("8.  switch sign");
+        System.out.println("9.  sine");
         System.out.println("10. cosine");
         System.out.println("11. tangent");
         System.out.println("12. inverse sine");
@@ -39,7 +40,9 @@ public class MainApplication {
         System.out.println("16. switch display mode");
         System.out.println("17. switch units mode");
         System.out.println("18. memory functions");
-        System.out.println("19. exit");
+        System.out.println("19. calculate percent of number");
+        System.out.println("20. decimal to percent");
+        System.out.println("21. exit");
     }
 
     public static String outputConverter(ScientificCalc sCalc, Double x) {
@@ -124,7 +127,7 @@ public class MainApplication {
                 break;
             case 5:
                 if (!isdiplayval) {
-                    userinput = Console.getDoubleInput("Enter a number: ");
+                    userinput = Console.getDoubleInput("Enter a number to square: ");
                     cfcalc.setDisplay(userinput);
                 }
                 cfcalc.square();
@@ -132,7 +135,7 @@ public class MainApplication {
                 break;
             case 6:
                 if (!isdiplayval) {
-                    userinput = Console.getDoubleInput("Enter a number: ");
+                    userinput = Console.getDoubleInput("Enter a number to sqaure root: ");
                     cfcalc.setDisplay(userinput);
                 }
                 cfcalc.squareRoot();
@@ -140,7 +143,7 @@ public class MainApplication {
                 break;
             case 7:
                 if (!isdiplayval) {
-                    userinput = Console.getDoubleInput("Enter a number: ");
+                    userinput = Console.getDoubleInput("Enter a number enter a numebr to inverse: ");
                     cfcalc.setDisplay(userinput);
                 }
                 cfcalc.inverse();
@@ -148,7 +151,7 @@ public class MainApplication {
                 break;
             case 8:
                 if (!isdiplayval) {
-                    userinput = Console.getDoubleInput("Enter a number: ");
+                    userinput = Console.getDoubleInput("Enter a number enter a number to switch sign: ");
                     cfcalc.setDisplay(userinput);
                 }
                 cfcalc.inverseSign();
@@ -156,7 +159,7 @@ public class MainApplication {
                 break;
             case 9:
                 if (!isdiplayval) {
-                    userinput = Console.getDoubleInput("Enter a number: ");
+                    userinput = Console.getDoubleInput("Enter a number to get sine of: ");
                     cfcalc.setDisplay(userinput);
                 }
                 System.out.println("sine(" + cfcalc.getDisplayValue() + ")= "
@@ -164,7 +167,7 @@ public class MainApplication {
                 break;
             case 10:
                 if (!isdiplayval) {
-                    userinput = Console.getDoubleInput("Enter a number: ");
+                    userinput = Console.getDoubleInput("Enter a number to get cosine of: ");
                     cfcalc.setDisplay(userinput);
                 }
                 System.out.println("cosine(" + cfcalc.getDisplayValue() + ")= "
@@ -172,7 +175,7 @@ public class MainApplication {
                 break;
             case 11:
                 if (!isdiplayval) {
-                    userinput = Console.getDoubleInput("Enter a number: ");
+                    userinput = Console.getDoubleInput("Enter a number to get tangent of: ");
                     cfcalc.setDisplay(userinput);
                 }
                 System.out.println("tangent(" + cfcalc.getDisplayValue() + ")= "
@@ -180,7 +183,7 @@ public class MainApplication {
                 break;
             case 12:
                 if (!isdiplayval) {
-                    userinput = Console.getDoubleInput("Enter a number: ");
+                    userinput = Console.getDoubleInput("Enter a number to get inverse sine of: ");
                     cfcalc.setDisplay(userinput);
                 }
                 System.out.println("inverse sine(" + cfcalc.getDisplayValue() + ")= "
@@ -188,7 +191,7 @@ public class MainApplication {
                 break;
             case 13:
                 if (!isdiplayval) {
-                    userinput = Console.getDoubleInput("Enter a number: ");
+                    userinput = Console.getDoubleInput("Enter a number to get inverse cosine of: ");
                     cfcalc.setDisplay(userinput);
                 }
                 System.out.println("inverse cosine(" + cfcalc.getDisplayValue() + ")= "
@@ -196,7 +199,7 @@ public class MainApplication {
                 break;
             case 14:
                 if (!isdiplayval) {
-                    userinput = Console.getDoubleInput("Enter a number: ");
+                    userinput = Console.getDoubleInput("Enter a number: enter a number to get inverse tangent of ");
                     cfcalc.setDisplay(userinput);
                 }
                 System.out.println("inverse tangent(" + cfcalc.getDisplayValue() + ")= "
@@ -204,7 +207,7 @@ public class MainApplication {
                 break;
             case 15:
                 if (!isdiplayval) {
-                    userinput = Console.getDoubleInput("Enter a number: ");
+                    userinput = Console.getDoubleInput("Enter a number to do factorial on: ");
                     cfcalc.setDisplay(userinput);
                 }
                 System.out.println("factorial(" + cfcalc.getDisplayValue() + ")= "
@@ -247,6 +250,22 @@ public class MainApplication {
                         break;
                 }
                 break;
+            case 19:
+                if (!isdiplayval) {
+                    userinput = Console.getDoubleInput("Enter a number: ");
+                    cfcalc.setDisplay(userinput);
+                }
+                userinput = Console.getDoubleInput("Enter a number to see what percent of " + cfcalc.getDisplayValue() + " it is : ");
+                cfcalc.percentage(userinput);
+                System.out.println("= "+ cfcalc.getDisplayValue()+"%");
+
+            case 20:
+                if (!isdiplayval) {
+                    userinput = Console.getDoubleInput("Enter a decimal to turn to percent: ");
+                    cfcalc.setDisplay(userinput);
+                }
+                cfcalc.decimalToPercentage();
+                System.out.println("= "+ cfcalc.getDisplayValue()+"%");
             default:
 
                 break;
