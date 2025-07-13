@@ -1,4 +1,4 @@
-package main.java.com.zipcodewilmington.scientificcalculator;
+package com.zipcodewilmington.scientificcalculator;
 
 public class ScientificCalc {
     Double memvalue;
@@ -8,7 +8,7 @@ public class ScientificCalc {
 
 
     public ScientificCalc(){
-        memvalue = 0;
+        memvalue = 0.0;
         DisplayMode = "decimal";
         modeIndex = 0;
         isDegrees = false;
@@ -24,20 +24,28 @@ public class ScientificCalc {
         switch (modeIndex) {
             case 0:
                 DisplayMode = "decimal";
+                System.out.println("set to:" + DisplayMode);
                 break;
             case 1:
                 DisplayMode = "hexadecimal";
+                System.out.println("set to:" + DisplayMode);
                 break;
             case 2:
                 DisplayMode = "binary";
+                System.out.println("set to:" + DisplayMode);
                 break;
             case 3:
                 DisplayMode = "octal";
+                System.out.println("set to:" + DisplayMode);
                 break;
             default:
                 break;
         }
 
+    }
+
+    public String getDisplayMode(){
+        return DisplayMode;
     }
 
     public void switchDisplayMode(String s){
@@ -73,7 +81,7 @@ public class ScientificCalc {
                 memvalue = curValue;
                 break;
             case "mc":
-                memvalue = 0;
+                memvalue = 0.0;
                 System.out.println("memory reset\n");
                 break;
             case "mrc":
@@ -83,48 +91,52 @@ public class ScientificCalc {
         }
     }
 
-    public void sine(Double x){
+    public Double mrc(){
+        return memvalue;
+    }
+
+    public double sine(Double x){
         if(isDegrees){
-            System.out.println(Math.sin(Math.toRadians(x)));
+            return Math.sin(Math.toRadians(x));
         }else{
-            System.out.println(Math.sin(x));
+            return Math.sin(x);
         }
     }
-    public void cosine(Double x){
+    public double cosine(Double x){
          if(isDegrees){
-            System.out.println(Math.cos(Math.toRadians(x)));
+            return Math.cos(Math.toRadians(x));
         }else{
-            System.out.println(Math.cos(x));
+            return Math.cos(x);
         }
     }
-    public void tangent(Double x){
+    public double tangent(Double x){
          if(isDegrees){
-            System.out.println(Math.tan(Math.toRadians(x)));
+            return Math.tan(Math.toRadians(x));
         }else{
-            System.out.println(Math.tan(x));
+            return Math.tan(x);
         }
     }
-    public void inverseSine(Double x){
-         if(isDegrees){
-            System.out.println(Math.asin(Math.toRadians(x)));
-        }else{
-            System.out.println(Math.asin(x));
-        }
+    public double inverseSine(Double x){
+    if(isDegrees){
+        return Math.toDegrees(Math.asin(x));
+    }else{
+        return Math.asin(x);
     }
-    public void inverseCosine(Double x){
-         if(isDegrees){
-            System.out.println(Math.acos(Math.toRadians(x)));
-        }else{
-            System.out.println(Math.acos(x));
-        }
+}
+public double inverseCosine(Double x){
+    if(isDegrees){
+        return Math.toDegrees(Math.acos(x));
+    }else{
+        return Math.acos(x);
     }
-    public void inverseTangent(Double x){
-         if(isDegrees){
-            System.out.println(Math.atan(Math.toRadians(x)));
-        }else{
-            System.out.println(Math.atan(x));
-        }
+}
+public double inverseTangent(Double x){
+    if(isDegrees){
+        return Math.toDegrees(Math.atan(x));
+    }else{
+        return Math.atan(x);
     }
+}
 
     public void switchUnitsMode(){
         if(isDegrees){
@@ -149,28 +161,28 @@ public class ScientificCalc {
         }
     }
 
-    public void log(Double x){
-        System.out.println(Math.log10(x));
+    public double log(Double x){
+        return Math.log10(x);
     }
 
-    public void inverseLog(Double x){
-        System.out.println(Math.pow(10,x));
+    public double inverseLog(Double x){
+        return Math.pow(10,x);
     }
 
-    public void naturalLog(Double x){
-        System.out.println(Math.log(x));
+    public double naturalLog(Double x){
+        return Math.log(x);
     }
-    public void inverseNaturalLog(){
-        System.out.println(Math.exp(x));
+    public double inverseNaturalLog(Double x){
+        return Math.exp(x);
     }
 
-    public void factorial(Double x){
-        System.out.println(factorialFunction(x));
+    public double factorial(Double x){
+        return factorialFunction(x);
     }
 
     public Double factorialFunction(Double x){
         if(x<=1)
-            return 1;
+            return 1.0;
         
         return x * factorialFunction(x-1);
     }
