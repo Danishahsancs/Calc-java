@@ -13,5 +13,11 @@ public class MainApplication {
         Console.println("The user input %s as a string", s);
         Console.println("The user input %s as a integer", i);
         Console.println("The user input %s as a d", d);
+
+        System.out.print("\033[H\033[2J");
+        System.out.flush(); 
+
+        System.out.println("da\\");
+        
     }
 }
