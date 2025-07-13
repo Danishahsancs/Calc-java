@@ -75,23 +75,19 @@ public class MainApplication {
                 System.out.println("="+cfcalc.getDisplayValue());
                 break;
             case 5:
-                userinput = Console.getDoubleInput("Enter a number to square to "+cfcalc.getDisplayValue()+" : ");
-                cfcalc.square(userinput);
+                cfcalc.square();
                 System.out.println("="+cfcalc.getDisplayValue()+" : ");
                 break;
             case 6:
-                userinput = Console.getDoubleInput("Enter a number to square root to "+cfcalc.getDisplayValue()+" : ");
-                cfcalc.squareroot(userinput);
+                cfcalc.squareRoot();
                 System.out.println("="+cfcalc.getDisplayValue()+" : ");
                 break;
             case 7:
-                userinput = Console.getDoubleInput("Enter a number to inverse to "+cfcalc.getDisplayValue()+" : ");
-                cfcalc.inverse(userinput);
+                cfcalc.inverse();
                 System.out.println("="+cfcalc.getDisplayValue()+" : ");
                 break;
             case 8:
-                userinput = Console.getDoubleInput("Enter a number to switch sign to "+cfcalc.getDisplayValue()+" : ");
-                cfcalc.switch sign(userinput);
+                cfcalc.inverseSign();
                 System.out.println("="+cfcalc.getDisplayValue()+" : ");
                 break;
             case 9:
