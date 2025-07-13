@@ -17,17 +17,25 @@ public class Console {
 
     public static String getStringInput(String prompt) {
         Scanner scanner = new Scanner(System.in);
-        println(prompt);
+        print(prompt);
         String userInput = scanner.nextLine();
-        scanner.close();
+        //scanner.close();
         return userInput;
     }
 
     public static Integer getIntegerInput(String prompt) {
-        return null;
+        Scanner scanner = new Scanner(System.in);
+        print(prompt);
+        Integer userinput = scanner.nextInt();
+        //scanner.close();
+        return userinput;
     }
 
     public static Double getDoubleInput(String prompt) {
-        return null;
+        Scanner scanner = new Scanner(System.in);
+        print(prompt);
+        Double userinput = scanner.nextDouble();
+        //scanner.close();
+        return userinput;
     }
 }
