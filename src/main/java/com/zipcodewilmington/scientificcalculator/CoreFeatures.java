@@ -117,7 +117,7 @@ public class CoreFeatures {
     //Caclulate the percentage of another number  NEW FEATURE #1
     public void percentage(double percent) {
         if (checkError()) return;
-        this.displayValue = (percent)*this.displayValue;
+        this.displayValue = (percent/this.displayValue)*100;
 
     }
 
