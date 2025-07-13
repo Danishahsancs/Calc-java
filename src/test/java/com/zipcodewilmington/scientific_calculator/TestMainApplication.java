@@ -126,5 +126,20 @@ public class TestMainApplication {
         assertEquals(-10.0, calculator.getDisplayValue(),DELTA);
 
     }
+    @Test
+    //new feature percentage of a number 
+    public void testPercentageOfNum() {
+        calculator.setDisplay(100);
+        calculator.percentage(50);
+        assertEquals(50.0, calculator.getDisplayValue(), DELTA);
+    }
+
+    @Test
+    //new feature turn decimal into a percentage
+    public void testDecimalToPercent() {
+        calculator.setDisplay(0.50);
+        calculator.decimalToPercentage();
+        assertEquals(50.0, calculator.getDisplayValue(),DELTA);
+    }
 
 }

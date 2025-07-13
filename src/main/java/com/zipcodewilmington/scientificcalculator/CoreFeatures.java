@@ -114,6 +114,20 @@ public class CoreFeatures {
         this.displayValue=1/this.displayValue;
     }
 
+    //Caclulate the percentage of another number  NEW FEATURE #1
+    public void percentage(double percent) {
+        if (checkError()) return;
+        this.displayValue = (percent/100)*this.displayValue;
+
+    }
+
+    //Takes a decimal and returns the percentage NEW FEATURE #2
+    public void decimalToPercentage () {
+        if (checkError()) return;
+        this.displayValue*=100;
+
+    }
+
     //Invert the sign of the number (switch between postive and negative)
     //(if ERR, skip the equation)
     public void inverseSign() {
@@ -136,5 +150,6 @@ public class CoreFeatures {
         }
         return false;
     }
+
 
 }
